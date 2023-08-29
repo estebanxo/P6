@@ -1,0 +1,51 @@
+html, body {
+    height: 100%;
+}
+body {
+    display: flex;
+    flex-direction: column;
+}
+#root, .App, .container {
+    height: 100%;
+}
+.container {
+    display: flex;
+    flex-direction: column;
+}
+.ErrorLogoLittle {
+    display: none;
+    @media (max-width: 1000px) {
+        display: block;
+        margin: 60px 0 30px 0;
+    }
+}
+.ErrorContainer {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    flex-grow: 1;
+}
+.ErrorLogo {
+    margin: 3%;
+    @media (max-width: 1000px) {
+        display: none;
+    }
+}
+p {
+    color: #FF6060;
+    margin: 30px 0;
+    font-size: 36px;
+    @media (max-width: 1000px) {
+        font-size: 15px;
+    }
+}
+.ErrorContainer a {
+    color: #FF6060;
+    font-size: 18px;
+    margin: 30px 0;
+    @media (max-width: 1000px) {
+        font-size: 14px;
+    }
+}

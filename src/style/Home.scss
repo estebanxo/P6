@@ -14,17 +14,36 @@
 //                    Fiche Logement
 .FicheLogementContainer {
   width: 88%;
-  margin: 0 auto;
-  padding: 20px;
+  margin: 40px auto;
+  padding: 20px 20px 40px 20px;
   display: flex;
   justify-content: center;
+  gap: 3%;
   flex-wrap: wrap;
+  background-color: #F6F6F6;
+  border-radius: 25px;
+  @media screen and (max-width: 814px) {
+    background-color: #ffffff;
+  }
+}
+.FicheLogementLink {
+  width: 340px;
+  border-radius: 25px;
+  height: 340px;
+  margin-top: 3%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  @media screen and (max-width: 814px) {
+    width: 100%;
+  }
 }
 .FicheLogementFigure {
   position: relative;
-  width: 340px;
-  border-radius: 15px;
-  height: 340px;
+  width: 100%;
+  border-radius: 25px;
+  height: 100%;
+  margin: 0;
   }
   .FicheLogementImg {
     width: 100%;
@@ -43,7 +62,7 @@
     top: 0;
     left: 0;
     position: absolute;
-    background: rgba(0,0,0,0.3);
+    background: linear-gradient(#00000000, #000000b8);
     display: flex;
     justify-content: start;
     align-items: end;
@@ -52,4 +71,12 @@
     padding-bottom: 4%;
     font-weight: 500;
     color: #ffffff;
+    @media screen and (max-width: 814px) {
+      height: 325px;
+      padding-bottom: 15px;
+    }
+  }
+  .FicheLogementTitle:hover {
+    box-shadow: 0 0 30px #00000090;
+    transition: 0.3s;
   }

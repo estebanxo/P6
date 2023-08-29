@@ -38,10 +38,10 @@ function Home() {
           <Link key={`${obj.id}`} className="FicheLogementLink" to={`FicheLogement/${obj.id}`}>
             <figure id={`${obj.id}`} className="FicheLogementFigure">
               <img src={`${obj.cover}`} alt="" className="FicheLogementImg"></img>
-              <figcaption className="FicheLogementTitle"> ${obj.title} </figcaption>
+              <figcaption className="FicheLogementTitle"> {obj.title} </figcaption>
             </figure>
           </Link>
-        ))};
+        ))}
         <Outlet/>
       </div>
       
