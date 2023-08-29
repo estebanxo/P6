@@ -1,0 +1,55 @@
+//                       body
+* {
+  max-width: 1500 px;
+  @media screen and (min-width: 1500px) {
+    * {
+        max-width: none;
+    }
+    body {
+        width: 1500px;
+        margin: auto;
+    }
+}
+}
+//                    Fiche Logement
+.FicheLogementContainer {
+  width: 88%;
+  margin: 0 auto;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.FicheLogementFigure {
+  position: relative;
+  width: 340px;
+  border-radius: 15px;
+  height: 340px;
+  }
+  .FicheLogementImg {
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    position: absolute;
+    border-radius: 15px;
+    object-fit: cover;
+    object-position: center;
+  }
+  .FicheLogementTitle {
+    margin-top: 0;
+    width: 96%;
+    height: 96%;
+    top: 0;
+    left: 0;
+    position: absolute;
+    background: rgba(0,0,0,0.3);
+    display: flex;
+    justify-content: start;
+    align-items: end;
+    border-radius: 15px;
+    padding-left: 4%;
+    padding-bottom: 4%;
+    font-weight: 500;
+    color: #ffffff;
+  }

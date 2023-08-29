@@ -1,0 +1,20 @@
+@font-face {
+	font-family: 'Montserrat';
+	src: url('../assets/font/Montserrat-Medium.woff2');
+	font-weight: 500;
+	font-style: normal;
+	font-display: fallback;
+}
+.Footer {
+    background-color: #000000;
+    text-align: center;
+    padding: 60px 20% 30px 20%;
+}
+.Footer p {
+    color: #ffffff;
+    font-size: 24px;
+    font-weight: 500;
+    @media (max-width: 1000px) {
+        font-size: 12px;
+    }
+}
