@@ -1,0 +1,45 @@
+.ContentBx {
+    max-width: 1023px;
+    background-color: #F6F6F6;
+    border-radius: 10px 10px 5px 5px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.fa-solid, .fa-chevron-down {
+    display: none;
+}
+.Label {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 99%;
+    padding: 1.2%;
+    border-radius: 5px;
+    font-size: 24px;
+    font-weight: 500;
+    background-color: #FF6060;
+    color: #FFFFFF;
+    cursor: pointer;
+}
+.Label + input[type="checkbox"] {
+    display: none;
+}
+.fa-chevron-up {
+    transition-duration: 0.2s;
+    transition-property: transform;
+}
+.Content {
+    height: 0;
+    overflow: hidden;
+    padding-left: 20px;
+    padding-right: 20px;
+    transition: height 0.2s;
+}
+.Label + input[type="checkbox"]:checked + .Content {
+    height: 100%;
+    transition: 0.2s;
+}
+.open {
+    transform: rotate(-180deg);
+}
