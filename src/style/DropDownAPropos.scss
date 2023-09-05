@@ -1,22 +1,24 @@
 .ContentBx {
     max-width: 75%;
-    background-color: #F6F6F6;
     border-radius: 10px 10px 5px 5px;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
     @media screen and (max-width: 900px) {
         max-width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
     }
 }
 .fa-solid, .fa-chevron-down {
     display: none;
 }
 .Label {
+    border: none;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 97.6%;
+    box-sizing: border-box;
+    width: 100%;
     padding: 1.2%;
     border-radius: 5px;
     font-size: 24px;
@@ -25,18 +27,20 @@
     color: #FFFFFF;
     cursor: pointer;
     @media screen and (max-width: 900px) {
-        width: 96.5%;
-        padding: 10px 10% 10 110%;
+        width: 90%;
+        padding: 1.2%;
+        border-radius: 10px;
     }
-}
-.Label + input[type="checkbox"] {
-    display: none;
 }
 .fa-chevron-up {
     transition-duration: 0.2s;
     transition-property: transform;
 }
 .Content {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    background-color: #F6F6F6;
     height: 0;
     overflow: hidden;
     padding: 0;
@@ -48,7 +52,7 @@
     font-weight: 100;
     margin: 0;
 }
-.Label + input[type="checkbox"]:checked + .Content {
+.openLabel + .Content {
     height: 100%;
     padding: 10px 20px 20px 20px;
     transition: 0.2s;
