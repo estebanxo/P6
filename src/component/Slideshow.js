@@ -1,7 +1,6 @@
 import "../style/Slideshow.scss";
 import vector from "../assets/images/logo/Vector.png";
 import { useState } from "react";
-// import { BsChevronCompactLeft, BsChevronCompactRight } from "react-icons/bs";
 
 function Slideshow(array) {
     const [Id, setId] = useState(0);

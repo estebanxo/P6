@@ -36,9 +36,8 @@ function FicheLogement() {
   let TableauDataId = DataValue.filter(obj => obj.id === id);
   console.log(TableauDataId);
 
-  let Data = TableauDataId[0];
-  console.log(Data);
 
+  const [data, setData] = useState("");
   const [picture, setPicture] = useState({});
   const [title, setTitle] = useState({});
   const [location, setLocation] = useState({});
@@ -48,9 +47,11 @@ function FicheLogement() {
   const [description, setDescription] = useState({});
   const [equipments, setEquipments] = useState([]);
 
-  async function pictures() {
-    let data = await Data;
+  async function retrieveData() {
+    let dataValue = await TableauDataId[0];
+    setData(dataValue);
     console.log(data);
+
     let picture = data.pictures;
     setPicture(picture);
 
@@ -82,10 +83,10 @@ function FicheLogement() {
     console.log(equipments);
     setEquipments(equipments);
   }
-  pictures();
+  retrieveData();
   
 
-  if (Data === undefined) navigate("/404");
+  if (data === "") navigate("/404");
   
   if (error) navigate("/404");
 
