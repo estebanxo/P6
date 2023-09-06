@@ -12,7 +12,7 @@ function Error() {
       <div className="ErrorContainer">
         <img src={ErrorLogo} alt="" className="ErrorLogo" />
         <img src={ErrorLogoLittle} alt="" className="ErrorLogoLittle" />
-        <p>Oups! La page que vous demandez n'existe pas.</p>
+        <p className="pError">Oups! La page que vous demandez n'existe pas.</p>
         <Link to="/">Retourner sur la page d’accueil</Link>
         
       </div>

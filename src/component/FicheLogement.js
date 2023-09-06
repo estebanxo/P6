@@ -1,6 +1,7 @@
 import "../style/FicheLogement.scss";
 import Header from "./Header";
 import Slideshow from "./Slideshow";
+import DropDown from "./DropDown";
 import Footer from "./Footer";
 import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
@@ -29,31 +30,60 @@ function FicheLogement() {
     fetchLogement();
   }, []);
 
-  // function data() {
-  //   try {
-  //     let TableauDataId = DataValue.filter(obj => obj.id === id);
-  //     let Data = TableauDataId[0];
-  //   } catch (error) {
-  //     console.log(error);
-  //     setError(true)
-  //   }
-  // }
-  // data();
+  
   console.log(DataValue);
+
   let TableauDataId = DataValue.filter(obj => obj.id === id);
   console.log(TableauDataId);
+
   let Data = TableauDataId[0];
   console.log(Data);
-  const [Picture, setPicture] = useState();
+
+  const [picture, setPicture] = useState({});
+  const [title, setTitle] = useState({});
+  const [location, setLocation] = useState({});
+  const [rating, setRating] = useState({});
+  const [tags, setTags] = useState([]);
+  const [host, setHost] = useState({});
+  const [description, setDescription] = useState({});
+  const [equipments, setEquipments] = useState([]);
 
   async function pictures() {
     let data = await Data;
     console.log(data);
-    let picture = await data.pictures;
+    let picture = data.pictures;
     setPicture(picture);
+
+    const title = data.title;
+    console.log(title);
+    setTitle(title);
+
+    const location = data.location;
+    console.log(location)
+    setLocation(location);
+
+    const rating = data.rating;
+    console.log(rating);
+    setRating(rating);
+
+    const tags = data.tags;
+    console.log(tags);
+    setTags(tags);
+
+    const host = data.host;
+    console.log(host);
+    setHost(host);
+
+    const description = data.description;
+    console.log(description);
+    setDescription(description);
+
+    const equipments = data.equipments;
+    console.log(equipments);
+    setEquipments(equipments);
   }
   pictures();
-  console.log(Picture);
+  
 
   if (Data === undefined) navigate("/404");
   
@@ -63,8 +93,38 @@ function FicheLogement() {
     <div>
       <Header />
       <div className="container">
-        <Slideshow array={Picture} />
+        
+        <Slideshow array={picture} />
+
+        <div className="containerLeftAndRight">
+          <div className="containerLeft">
+            <div className="containerInfos">
+              <h1 className="title">{title}</h1>
+              <p className="location">{location}</p>
+            </div>
+
+            <div className="containerTags">
+              {tags.map((obj, index) => (
+                <span key={`${obj}-${index}`}>{obj}</span>
+              ))}
+            </div>
+          </div>
+
+          <div className="containerRight">
+            <div className="host">
+              <p className="nameHost">{host.name}</p>
+              <img src={host.picture} alt="" className="hostImg" />
+            </div>
+            <div className="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+          </div>
+        </div>
+
+        <div className="containerDropDown">
+          <DropDown title="Description" content={[description]} />
+          <DropDown title="Équipements" content={equipments} />
+        </div>
       </div>
+      
       <Footer />
     </div>
   );
