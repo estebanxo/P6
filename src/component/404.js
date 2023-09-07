@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 
 function Error() {
   return (
-    <div className="container">
+    <div className="containerErr">
       <Header />
       <div className="ErrorContainer">
         <img src={ErrorLogo} alt="" className="ErrorLogo" />

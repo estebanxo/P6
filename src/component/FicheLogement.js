@@ -63,11 +63,11 @@ function FicheLogement() {
                 <p className="location">{logement.location}</p>
               </div>
 
-              <ul className="containerTags">
+              <div className="containerTags">
                 {logement.tags.map((obj, index) => (
-                  <li key={`${obj}-${index}`}>{obj}</li>
+                  <span className="tags" key={`${obj}-${index}`}>{obj}</span>
                 ))}
-              </ul>
+              </div>
             </div>
 
             <div className="containerRight">
@@ -79,7 +79,7 @@ function FicheLogement() {
             </div>
           </div>
 
-          <div className="containerDropDown">
+          <div className="containerDropDownF">
             <DropDown title="Description" content={[logement.description]} />
             <DropDown title="Équipements" content={logement.equipments} />
           </div>

@@ -5,10 +5,10 @@ body {
     display: flex;
     flex-direction: column;
 }
-#root, .App, .container {
+#root, .App, .containerErr {
     height: 100%;
 }
-.container {
+.containerErr {
     display: flex;
     flex-direction: column;
 }
