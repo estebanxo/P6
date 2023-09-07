@@ -11,121 +11,80 @@ function FicheLogement() {
   
   const navigate = useNavigate();
   let params = useParams();
-  let id = params.id;
 
-  const [DataValue, setDataValue] = useState([]);
+  const [logements, setLogements] = useState([]);
+  const [logement, setLogement] = useState(null);
   const [error, setError] = useState(false);
 
   useEffect(() => {
-    async function fetchLogement() {
-      try {
-        const response = await fetch(`http://localhost:3000/data.json`);
-        const dataValue = await response.json();
-        setDataValue(dataValue);
-      } catch (err) {
-        console.log(err);
-        setError(true)
-      } 
-    }
-    fetchLogement();
+    fetch("http://localhost:3000/data.json")
+    .then((response) => response.json())
+    .then((data) => {
+      setLogements(data);
+    })
+    .catch((error) => {
+      console.log(error);
+      setError(true);
+    })
   }, []);
 
-  
-  console.log(DataValue);
+  useEffect(() => {
+    // Si la liste des logements est vide => on n'a pas encore récupéré les données
+    if (logements.length === 0) {
+      return;
+    }
 
-  let TableauDataId = DataValue.filter(obj => obj.id === id);
-  console.log(TableauDataId);
+    const logement = logements.find((element) => element.id === params.id);
 
+    if (logement) {
+      setLogement(logement);
+      console.log(logement)
+    } else {
+      // Si on ne trouve pas le logement c'est qu'il n'existe pas dans les données => on redirige vers la page 404
+      navigate("/404");
+    }
+  }, [logements, params.id, navigate]);
 
-  const [data, setData] = useState("");
-  const [picture, setPicture] = useState({});
-  const [title, setTitle] = useState({});
-  const [location, setLocation] = useState({});
-  const [rating, setRating] = useState({});
-  const [tags, setTags] = useState([]);
-  const [host, setHost] = useState({});
-  const [description, setDescription] = useState({});
-  const [equipments, setEquipments] = useState([]);
-
-  async function retrieveData() {
-    let dataValue = await TableauDataId[0];
-    setData(dataValue);
-    console.log(data);
-
-    let picture = data.pictures;
-    setPicture(picture);
-
-    const title = data.title;
-    console.log(title);
-    setTitle(title);
-
-    const location = data.location;
-    console.log(location)
-    setLocation(location);
-
-    const rating = data.rating;
-    console.log(rating);
-    setRating(rating);
-
-    const tags = data.tags;
-    console.log(tags);
-    setTags(tags);
-
-    const host = data.host;
-    console.log(host);
-    setHost(host);
-
-    const description = data.description;
-    console.log(description);
-    setDescription(description);
-
-    const equipments = data.equipments;
-    console.log(equipments);
-    setEquipments(equipments);
+  if (error === true) {
+    navigate("/404");
   }
-  retrieveData();
-  
-
-  if (data === "") navigate("/404");
-  
-  if (error) navigate("/404");
-
   return (
     <div>
       <Header />
-      <div className="container">
-        
-        <Slideshow array={picture} />
+      {logement &&
+        <div className="container">
+          
+          <Slideshow array={logement.pictures} />
 
-        <div className="containerLeftAndRight">
-          <div className="containerLeft">
-            <div className="containerInfos">
-              <h1 className="title">{title}</h1>
-              <p className="location">{location}</p>
+          <div className="containerLeftAndRight">
+            <div className="containerLeft">
+              <div className="containerInfos">
+                <h1 className="title">{logement.title}</h1>
+                <p className="location">{logement.location}</p>
+              </div>
+
+              <ul className="containerTags">
+                {logement.tags.map((obj, index) => (
+                  <li key={`${obj}-${index}`}>{obj}</li>
+                ))}
+              </ul>
             </div>
 
-            <div className="containerTags">
-              {tags.map((obj, index) => (
-                <span key={`${obj}-${index}`}>{obj}</span>
-              ))}
+            <div className="containerRight">
+              <div className="host">
+                <p className="nameHost">{logement.host.name}</p>
+                <img src={logement.host.picture} alt="" className="hostImg" />
+              </div>
+              <div className="stars"><i className="fa-solid fa-star"></i><i className="fa-solid fa-star"></i><i className="fa-solid fa-star"></i><i className="fa-solid fa-star"></i><i className="fa-solid fa-star"></i></div>
             </div>
           </div>
 
-          <div className="containerRight">
-            <div className="host">
-              <p className="nameHost">{host.name}</p>
-              <img src={host.picture} alt="" className="hostImg" />
-            </div>
-            <div className="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+          <div className="containerDropDown">
+            <DropDown title="Description" content={[logement.description]} />
+            <DropDown title="Équipements" content={logement.equipments} />
           </div>
         </div>
-
-        <div className="containerDropDown">
-          <DropDown title="Description" content={[description]} />
-          <DropDown title="Équipements" content={equipments} />
-        </div>
-      </div>
-      
+      }
       <Footer />
     </div>
   );

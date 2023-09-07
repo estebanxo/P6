@@ -13,11 +13,11 @@ function DropDown(props) {
         <div className="ContentBx" >
             <button type="button" className={isChecked === true ? "Label openLabel" : "Label"} onClick={handleOnClick}>
                 <span>{props.title}</span>
-                <i class={isChecked === true ? "fa-solid fa-chevron-up open" : "fa-solid fa-chevron-up"}></i>
+                <i className={isChecked === true ? "fa-solid fa-chevron-up open" : "fa-solid fa-chevron-up"}></i>
             </button>
             <div className="Content">
-                {props.content.map((obj) => (
-                    <p>{obj}</p>
+                {props.content.map((obj, index) => (
+                    <p key={index}>{obj}</p>
                 ))}
             </div>
         </div>
