@@ -7,6 +7,9 @@
     align-items: start;
     justify-content: space-between;
     padding-top: 24px;
+    @media screen and (max-width: 1120px) {
+        flex-direction: column;
+    }
 }
 .containerInfos {
     color: #FF6060;
@@ -16,12 +19,20 @@
     display: flex;
     flex-direction: column;
     gap: 20px;
+    @media screen and (max-width: 1120px) {
+        width: 100%;
+        flex-direction: row;
+        justify-content: space-between;
+    }
 }
 .host {
     display: flex;
     justify-content: space-between;
     align-items: center;
     gap: 15px;
+    @media screen and (max-width: 1120px) {
+        order: 2;
+    }
 }
 .title {
     font-size: 36px;
@@ -64,6 +75,9 @@
     justify-content: end;
     align-items: center;
     gap: 10px;
+    @media screen and (max-width: 1120px) {
+        order: 1;
+    }
 }
 .fa-star {
     color: #FF6060;
@@ -73,10 +87,19 @@
     justify-content: center;
     gap: 20px;
     width: 100%;
+    margin: 20px 0 30px 0;
+    @media screen and (max-width: 1120px) {
+        flex-direction: column;
+    }
 }
 .ContentBx {
     flex: 1;
-    margin-bottom: 30px;
+    @media screen and (max-width: 1120px) {
+        max-width: none;
+    }
+}
+.Label {
+    width: 100%;
 }
 .content {
     height: 80%;
