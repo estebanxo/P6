@@ -6,6 +6,7 @@ import Footer from "./Footer";
 import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { useNavigate  } from "react-router-dom";
+import { FaStar } from "react-icons/fa";
 
 function FicheLogement() {
   
@@ -15,6 +16,7 @@ function FicheLogement() {
   const [logements, setLogements] = useState([]);
   const [logement, setLogement] = useState(null);
   const [error, setError] = useState(false);
+  const [rateColor, setColor] = useState(null);
 
   useEffect(() => {
     fetch("http://localhost:3000/data.json")
@@ -38,16 +40,18 @@ function FicheLogement() {
 
     if (logement) {
       setLogement(logement);
-      console.log(logement)
+      console.log(logement.rating)
     } else {
       // Si on ne trouve pas le logement c'est qu'il n'existe pas dans les données => on redirige vers la page 404
       navigate("/404");
     }
   }, [logements, params.id, navigate]);
+  
 
   if (error === true) {
     navigate("/404");
   }
+
   return (
     <div>
       <Header />
@@ -75,7 +79,20 @@ function FicheLogement() {
                 <p className="nameHost">{logement.host.name}</p>
                 <img src={logement.host.picture} alt="" className="hostImg" />
               </div>
-              <div className="stars"><i className="fa-solid fa-star"></i><i className="fa-solid fa-star"></i><i className="fa-solid fa-star"></i><i className="fa-solid fa-star"></i><i className="fa-solid fa-star"></i></div>
+              <div className="containerStars">
+                {[...Array(5)].map((star, index) => {
+                  const currentRate = index + 1;
+                  return (
+                    <label className="stars">
+                      <input type="radio" name="rate" value={currentRate} />
+                      <FaStar size={36} 
+                      color={currentRate <= (rateColor || logement.rating) ? "#FF6060" : "#E3E3E3"}  
+                      />
+                    </label>
+                  )
+                })}
+              </div>
+              
             </div>
           </div>
 

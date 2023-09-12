@@ -70,7 +70,7 @@
     width: 64px;
     border-radius: 50%;
 }
-.stars {
+.containerStars {
     display: flex;
     justify-content: end;
     align-items: center;
@@ -79,8 +79,8 @@
         order: 1;
     }
 }
-.fa-star {
-    color: #FF6060;
+.stars input[name="rate"] {
+    display: none;
 }
 .containerDropDownF {
     display: flex;
