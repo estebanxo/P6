@@ -7,19 +7,19 @@ function Header() {
   return (
     <div className="Header">
       <header className="Header-header">
-        <nav>
-          <img src={logo} alt="La maison jungle" className="headerLogo" />
+        <nav className="navBar">
+          <img src={logo} alt="La maison jungle" className="navBar__logo" />
           <img
             src={logoLittle}
             alt="La maison jungle"
-            className="headerLogoLittle"
+            className="navBar__logoLittle"
           />
-          <ul>
-            <li>
-              <NavLink id="LinkHome" to="/">Accueil</NavLink>
+          <ul className="navBar__ul">
+            <li className="navBar__li">
+              <NavLink className="navBar__link" id="navBar__linkHome" to="/">Accueil</NavLink>
             </li>
-            <li>
-              <NavLink id="LinkAPropos" to="/APropos">A Propos</NavLink>
+            <li className="navBar__li">
+              <NavLink className="navBar__link" id="navBar__linkAPropos" to="/APropos">A Propos</NavLink>
             </li>
           </ul>
         </nav>

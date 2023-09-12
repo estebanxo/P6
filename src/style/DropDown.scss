@@ -1,63 +1,60 @@
 .ContentBx {
     max-width: 75%;
     border-radius: 10px 10px 5px 5px;
-    @media screen and (max-width: 700px) {
+    @media screen and (max-width: 810px) {
         max-width: 100%;
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
     }
-}
-.fa-solid, .fa-chevron-down {
-    display: none;
-}
-.Label {
-    border: none;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    box-sizing: border-box;
-    width: 100%;
-    padding: 1.2%;
-    border-radius: 5px;
-    font-size: 24px;
-    font-weight: 500;
-    background-color: #FF6060;
-    color: #FFFFFF;
-    cursor: pointer;
-    @media screen and (max-width: 700px) {
-        width: 90%;
+    .Label {
+        border: none;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        box-sizing: border-box;
+        width: 100%;
         padding: 1.2%;
-        border-radius: 10px;
+        border-radius: 5px;
+        font-size: 24px;
+        font-weight: 500;
+        background-color: #FF6060;
+        color: #FFFFFF;
+        cursor: pointer;
+        @media screen and (max-width: 810px) {
+            width: 100%;
+            padding: 1.2%;
+            border-radius: 10px;
+        }
+        .fa-chevron-up {
+            transition-duration: 0.2s;
+            transition-property: transform;
+        }
+        .open {
+            transform: rotate(-180deg);
+        }
     }
-}
-.fa-chevron-up {
-    transition-duration: 0.2s;
-    transition-property: transform;
-}
-.Content {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    background-color: #F6F6F6;
-    border-radius: 0 0 10px 10px;
-    height: 0;
-    overflow: hidden;
-    padding: 0;
-    transition: height 0.2s;
-    transition: padding 0.2s;
-}
-.Content p {
-    font-size: 18px;
-    font-weight: 100;
-    margin: 0;
-}
-.openLabel + .Content {
-    height: auto;
-    padding: 10px 20px 20px 20px;
-    transition: 0.2s;
-}
-.open {
-    transform: rotate(-180deg);
+    .Content {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        background-color: #F6F6F6;
+        border-radius: 0 0 10px 10px;
+        height: 0;
+        overflow: hidden;
+        padding: 0;
+        transition: height 0.2s;
+        transition: padding 0.2s;
+        .content__p {
+            font-size: 18px;
+            font-weight: 100;
+            margin: 0;
+        }
+    }
+    .openLabel + .Content {
+        height: auto;
+        padding: 10px 20px 20px 20px;
+        transition: 0.2s;
+    }
 }

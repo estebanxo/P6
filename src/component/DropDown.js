@@ -17,7 +17,7 @@ function DropDown(props) {
             </button>
             <div className="Content">
                 {props.content.map((obj, index) => (
-                    <p key={index}>{obj}</p>
+                    <p className="content__p" key={index}>{obj}</p>
                 ))}
             </div>
         </div>

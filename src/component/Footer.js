@@ -3,9 +3,9 @@ import '../style/Footer.scss';
 
 function Footer() {
   return (
-    <footer className="Footer">
+    <footer className="footer">
       <img src={logo} alt='La maison jungle' className='lmj-logo' />
-      <p>© 2020 Kasa. All rights reserved</p>
+      <p className='footer__p'>© 2020 Kasa. All rights reserved</p>
     </footer>
   );
 }

@@ -1,51 +1,50 @@
-html, body {
+$red-light: #FF6060;
+
+html, body, #root, .App, .containerErr {
     height: 100%;
 }
 body {
     display: flex;
     flex-direction: column;
-}
-#root, .App, .containerErr {
-    height: 100%;
-}
-.containerErr {
-    display: flex;
-    flex-direction: column;
-}
-.ErrorLogoLittle {
-    display: none;
-    @media (max-width: 1000px) {
-        display: block;
-        margin: 60px 0 30px 0;
-    }
-}
-.ErrorContainer {
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    flex-grow: 1;
-}
-.ErrorLogo {
-    margin: 3%;
-    @media (max-width: 1000px) {
-        display: none;
-    }
-}
-.pError {
-    color: #FF6060;
-    margin: 30px 0;
-    font-size: 36px;
-    @media (max-width: 1000px) {
-        font-size: 15px;
-    }
-}
-.ErrorContainer a {
-    color: #FF6060;
-    font-size: 18px;
-    margin: 30px 0;
-    @media (max-width: 1000px) {
-        font-size: 14px;
+    .containerErr {
+        display: flex;
+        flex-direction: column;
+        .errorContainer {
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            flex-grow: 1;
+            .errorContainer__logo {
+                margin: 3%;
+                @media (max-width: 910px) {
+                    display: none;
+                }
+            }
+            .errorContainer__logoLittle {
+                display: none;
+                @media (max-width: 910px) {
+                    display: block;
+                    margin: 60px 0 30px 0;
+                }
+            }
+            .errorContainer__pError {
+                color: $red-light;
+                margin: 30px 0;
+                font-size: 36px;
+                @media (max-width: 910px) {
+                    font-size: 15px;
+                }
+            }
+            .errorContainer__link {
+                color: $red-light;
+                font-size: 18px;
+                margin: 30px 0;
+                @media (max-width: 910px) {
+                    font-size: 14px;
+                }
+            }
+        }
     }
 }

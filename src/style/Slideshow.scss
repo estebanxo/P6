@@ -4,35 +4,38 @@
     border-radius: 15px;
     display: block;
     position: relative;
-}
-.carouselItem {
-    width: 100%;
-    height: 100%;
-    border-radius: 15px;
-    background: center/cover;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-.vector {
-    cursor: pointer;
-}
-.left {
-    padding-left: 20px;
-    color: #FFFFFF;
-}
-.right {
-    padding-left: 20px;
-    transform: rotate(180deg);
-    color: #FFFFFF;
-}
-.countImg {
-    color: #FFFFFF;
-    position: absolute;
-    bottom: 0px;
-    left: 50%;
-    font-size: 36px;
-    @media (max-width: 750px) {
-        display: none;
+    @media screen and (max-width: 810px) {
+        height: 255px;
+    }
+    .carousel__item {
+        width: 100%;
+        height: 100%;
+        border-radius: 15px;
+        background: center/cover;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        .vector {
+            cursor: pointer;
+        }
+        .carousel__item__left {
+            padding-left: 20px;
+            color: #FFFFFF;
+        }
+        .carousel__item__right {
+            padding-left: 20px;
+            transform: rotate(180deg);
+            color: #FFFFFF;
+        }
+    }
+    .carousel__countImg {
+        color: #FFFFFF;
+        position: absolute;
+        bottom: 0px;
+        left: 50%;
+        font-size: 36px;
+        @media (max-width: 750px) {
+            display: none;
+        }
     }
 }

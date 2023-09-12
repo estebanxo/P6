@@ -25,12 +25,12 @@ function Slideshow(array) {
         <div className="carousel">
             <div
                 style={{backgroundImage: `url(${tableau[Id]})`}}
-                className="carouselItem"
+                className="carousel__item"
             >
-                <img className="vector left" src={vector} alt="" onClick={prevSlide} />
-                <img className="vector right" src={vector} alt="" onClick={nextSlide} />
+                <img className="vector carousel__item__left" src={vector} alt="" onClick={prevSlide} />
+                <img className="vector carousel__item__right" src={vector} alt="" onClick={nextSlide} />
             </div>
-            <p className="countImg">{Id+1}/{nbrImg}</p>
+            <p className="carousel__countImg">{Id+1}/{nbrImg}</p>
             
         </div>
     );

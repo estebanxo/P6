@@ -5,16 +5,16 @@
 	font-style: normal;
 	font-display: fallback;
 }
-.Footer {
+.footer {
     background-color: #000000;
     text-align: center;
     padding: 60px 20% 30px 20%;
-}
-.Footer p {
-    color: #ffffff;
-    font-size: 24px;
-    font-weight: 500;
-    @media (max-width: 1000px) {
-        font-size: 12px;
+    .footer__p {
+        color: #ffffff;
+        font-size: 24px;
+        font-weight: 500;
+        @media (max-width: 810px) {
+            font-size: 12px;
+        }
     }
 }

@@ -9,14 +9,12 @@ function Error() {
   return (
     <div className="containerErr">
       <Header />
-      <div className="ErrorContainer">
-        <img src={ErrorLogo} alt="" className="ErrorLogo" />
-        <img src={ErrorLogoLittle} alt="" className="ErrorLogoLittle" />
-        <p className="pError">Oups! La page que vous demandez n'existe pas.</p>
-        <Link to="/">Retourner sur la page d’accueil</Link>
-        
+      <div className="errorContainer">
+        <img src={ErrorLogo} alt="" className="errorContainer__logo" />
+        <img src={ErrorLogoLittle} alt="" className="errorContainer__logoLittle" />
+        <p className="errorContainer__pError">Oups! La page que vous demandez n'existe pas.</p>
+        <Link className="errorContainer__link" to="/">Retourner sur la page d’accueil</Link>
       </div>
-      
       <Footer />
     </div>
   );

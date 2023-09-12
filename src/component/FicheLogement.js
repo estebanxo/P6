@@ -63,27 +63,27 @@ function FicheLogement() {
           <div className="containerLeftAndRight">
             <div className="containerLeft">
               <div className="containerInfos">
-                <h1 className="title">{logement.title}</h1>
-                <p className="location">{logement.location}</p>
+                <h1 className="containerInfos__title">{logement.title}</h1>
+                <p className="containerInfos__location">{logement.location}</p>
               </div>
 
               <div className="containerTags">
                 {logement.tags.map((obj, index) => (
-                  <span className="tags" key={`${obj}-${index}`}>{obj}</span>
+                  <span className="containerTags__tags" key={`${obj}-${index}`}>{obj}</span>
                 ))}
               </div>
             </div>
 
             <div className="containerRight">
               <div className="host">
-                <p className="nameHost">{logement.host.name}</p>
-                <img src={logement.host.picture} alt="" className="hostImg" />
+                <p className="host__nameHost">{logement.host.name}</p>
+                <img src={logement.host.picture} alt="" className="host__hostImg" />
               </div>
               <div className="containerStars">
                 {[...Array(5)].map((star, index) => {
                   const currentRate = index + 1;
                   return (
-                    <label className="stars">
+                    <label className="containerStars__stars">
                       <input type="radio" name="rate" value={currentRate} />
                       <FaStar size={36} 
                       color={currentRate <= (rateColor || logement.rating) ? "#FF6060" : "#E3E3E3"}  

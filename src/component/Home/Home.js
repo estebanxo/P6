@@ -35,10 +35,10 @@ function Home() {
       <Banner img={banner} name="Chez vous, partout et ailleurs"/>
       <div className="FicheLogementContainer">
         {DataValue.map((obj) => (
-          <Link key={`${obj.id}`} className="FicheLogementLink" to={`FicheLogement/${obj.id}`}>
-            <figure id={`${obj.id}`} className="FicheLogementFigure">
-              <img src={`${obj.cover}`} alt="" className="FicheLogementImg"></img>
-              <figcaption className="FicheLogementTitle"> {obj.title} </figcaption>
+          <Link key={`${obj.id}`} className="FicheLogementContainer__Link" to={`FicheLogement/${obj.id}`}>
+            <figure id={`${obj.id}`} className="FicheLogementContainer__Figure">
+              <img src={`${obj.cover}`} alt="" className="FicheLogementContainer__Img"></img>
+              <figcaption className="FicheLogementContainer__Title"> {obj.title} </figcaption>
             </figure>
           </Link>
         ))}
