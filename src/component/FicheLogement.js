@@ -82,7 +82,7 @@ function FicheLogement() {
                   return (
                     <label key={`${star}, ${index}`} className="containerStars__stars">
                       <input type="radio" name="rate" value={currentRate} />
-                      <i className={currentRate <= (rateColor || logement.rating) ? "fa-solid fa-star fa-xl red" : "fa-solid fa-star fa-xl gray"} />
+                      <i className={currentRate <= (rateColor || logement.rating) ? "fa-solid fa-star fa-2xl red" : "fa-solid fa-star fa-2xl gray"} />
                     </label>
                   )
                 })}
