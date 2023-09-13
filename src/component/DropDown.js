@@ -1,5 +1,6 @@
 import "../style/DropDown.scss";
 import { useState } from "react";
+import verctorFermer from "../assets/icones/VectorFermer.png";
 
 function DropDown(props) {
     const [isChecked, setIsChecked] = useState(false);
@@ -13,7 +14,7 @@ function DropDown(props) {
         <div className="ContentBx" >
             <button type="button" className={isChecked === true ? "Label openLabel" : "Label"} onClick={handleOnClick}>
                 <span>{props.title}</span>
-                <i className={isChecked === true ? "fa-solid fa-chevron-up open" : "fa-solid fa-chevron-up"}></i>
+                <img src={verctorFermer} alt="" className={isChecked === true ? "fa-solid fa-chevron-up open" : "fa-solid fa-chevron-up"} />
             </button>
             <div className="Content">
                 {props.content.map((obj, index) => (

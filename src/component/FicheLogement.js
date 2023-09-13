@@ -6,6 +6,8 @@ import Footer from "./Footer";
 import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { useNavigate  } from "react-router-dom";
+import starGray from "../assets/icones/star_gray.png";
+import starRed from "../assets/icones/star_red.png";
 
 function FicheLogement() {
   
@@ -82,7 +84,7 @@ function FicheLogement() {
                   return (
                     <label key={`${star}, ${index}`} className="containerStars__stars">
                       <input type="radio" name="rate" value={currentRate} />
-                      <i className={currentRate <= (rateColor || logement.rating) ? "fa-solid fa-star fa-2xl red" : "fa-solid fa-star fa-2xl gray"} />
+                      <img src={currentRate <= (rateColor || logement.rating) ? starRed : starGray} alt="" />
                     </label>
                   )
                 })}
