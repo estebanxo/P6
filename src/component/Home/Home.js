@@ -17,7 +17,6 @@ function Home() {
         const dataValue = await response.json();
         setDataValue(dataValue);
       } catch (err) {
-        console.log(err);
         setError(true)
       } 
     }

@@ -6,7 +6,6 @@ import Footer from "./Footer";
 import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { useNavigate  } from "react-router-dom";
-import Star from "../assets/icones/Star.png";
 
 function FicheLogement() {
   
@@ -25,7 +24,6 @@ function FicheLogement() {
       setLogements(data);
     })
     .catch((error) => {
-      console.log(error);
       setError(true);
     })
   }, []);
@@ -40,7 +38,6 @@ function FicheLogement() {
 
     if (logement) {
       setLogement(logement);
-      console.log(logement.rating)
     } else {
       // Si on ne trouve pas le logement c'est qu'il n'existe pas dans les données => on redirige vers la page 404
       navigate("/404");
@@ -83,8 +80,8 @@ function FicheLogement() {
                 {[...Array(5)].map((star, index) => {
                   const currentRate = index + 1;
                   return (
-                    <label className="containerStars__stars">
-                      <input key={`${star}, ${index}`} type="radio" name="rate" value={currentRate} />
+                    <label key={`${star}, ${index}`} className="containerStars__stars">
+                      <input type="radio" name="rate" value={currentRate} />
                       <i className={currentRate <= (rateColor || logement.rating) ? "fa-solid fa-star fa-xl red" : "fa-solid fa-star fa-xl gray"} />
                     </label>
                   )

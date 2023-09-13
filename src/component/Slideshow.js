@@ -6,8 +6,6 @@ function Slideshow(array) {
     const [Id, setId] = useState(0);
     let tableau = array.array;
     let nbrImg = tableau.length;
-    console.log(tableau[0]);
-    console.log(nbrImg);
 
     const prevSlide = () => {
         const isFirstSlide = Id === 0;
