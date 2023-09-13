@@ -14,7 +14,7 @@ function DropDown(props) {
         <div className="ContentBx" >
             <button type="button" className={isChecked === true ? "Label openLabel" : "Label"} onClick={handleOnClick}>
                 <span>{props.title}</span>
-                <img src={verctorFermer} alt="" className={isChecked === true ? "fa-solid fa-chevron-up open" : "fa-solid fa-chevron-up"} />
+                <img src={verctorFermer} alt="" className={isChecked === true ? "chevron open" : "chevron"} />
             </button>
             <div className="Content">
                 {props.content.map((obj, index) => (
