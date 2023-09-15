@@ -84,7 +84,7 @@ function FicheLogement() {
                   return (
                     <label key={`${star}, ${index}`} className="containerStars__stars">
                       <input type="radio" name="rate" value={currentRate} />
-                      <img src={currentRate <= (rateColor || logement.rating) ? starRed : starGray} alt="" />
+                      <img className="containerStars__stars--star" src={currentRate <= (rateColor || logement.rating) ? starRed : starGray} alt="" />
                     </label>
                   )
                 })}

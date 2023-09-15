@@ -22,25 +22,40 @@ $red-light: #FF6060;
                 .containerInfos__title {
                     font-size: 36px;
                     margin: 0;
+                    @media screen and (max-width: 810px) {
+                        font-size: 18px;
+                    }
                 }
                 .containerInfos__location {
                     font-size: 18px;
-                    margin: 0;
+                    margin: 5px 0 0 0;
+                    @media screen and (max-width: 810px) {
+                        font-size: 14px;
+                    }
                 }
             }
             .containerTags {
                 display: flex;
                 align-items: center;
+                flex-wrap: wrap;
                 justify-content: flex-start;
                 padding: 0;
                 gap: 20px;
                 margin: 25px 0;
                 .containerTags__tags {
+                    display: flex;
+                    flex-wrap: nowrap;
+                    justify-content: center;
+                    align-items: center;
                     min-width: 95px;
                     padding: 3px 10px;
+                    font-size: 14px;
                     background-color: $red-light;
                     border-radius: 10px;
                     color: #FFFFFF;
+                    @media screen and (max-width: 810px) {
+                        font-size: 10px;
+                    }
                 }
             }
         }
@@ -89,6 +104,12 @@ $red-light: #FF6060;
                 .containerStars__stars input[name="rate"] {
                     display: none;
                 }
+                .containerStars__stars--star {
+                    width: 24px;
+                    @media screen and (max-width: 580px) {
+                        width: 13px;
+                    }
+                }
                 .starRed {
                     color: #FF6060;
                 }
@@ -115,9 +136,6 @@ $red-light: #FF6060;
             }
             .Label {
                 width: 100%;
-            }
-            .content {
-                height: 80%;
             }
         }
     }

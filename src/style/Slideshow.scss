@@ -17,6 +17,10 @@
         justify-content: space-between;
         .vector {
             cursor: pointer;
+            width: 46px;
+            @media screen and (max-width: 810px) {
+                width: 12px;
+            }
         }
         .carousel__item__left {
             padding-left: 20px;
@@ -34,7 +38,10 @@
         bottom: 0px;
         left: 50%;
         font-size: 36px;
-        @media (max-width: 750px) {
+        @media screen and (max-width: 810px) {
+            font-size: 20px;
+        }
+        @media (max-width: 500px) {
             display: none;
         }
     }

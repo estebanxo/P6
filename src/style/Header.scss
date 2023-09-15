@@ -10,6 +10,9 @@
     align-items: center;
     justify-content: space-between;
     margin: 40px 5% 40px 5%;
+    @media (max-width: 810px) {
+        margin: 40px 5% 20px 5%;
+    }
     .navBar__logo{
         @media (max-width: 810px) {
             display: none;
