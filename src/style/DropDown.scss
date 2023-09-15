@@ -48,6 +48,9 @@
             font-size: 18px;
             font-weight: 100;
             margin: 0;
+            @media screen and (max-width: 810px) {
+                font-size: 14px;
+            }
         }
     }
     .openLabel + .Content {
