@@ -87,14 +87,14 @@ $red-light: #FF6060;
                     color: $red-light;
                     font-size: 18px;
                     font-weight: 500;
-                    @media screen and (max-width: 580px) {
+                    @media screen and (max-width: 810px) {
                         font-size: 12px;
                     }
                 }
                 .host__hostImg {
                     width: 64px;
                     border-radius: 50%;
-                    @media screen and (max-width: 580px) {
+                    @media screen and (max-width: 810px) {
                         width: 32px;
                     }
                 }
@@ -112,7 +112,7 @@ $red-light: #FF6060;
                 }
                 .containerStars__stars--star {
                     width: 24px;
-                    @media screen and (max-width: 580px) {
+                    @media screen and (max-width: 810px) {
                         width: 13px;
                     }
                 }
