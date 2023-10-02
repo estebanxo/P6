@@ -2,11 +2,13 @@ import banner from "../../assets/images/banniere_acceuil.jpg";
 import "../../style/Home.scss";
 import Header from "../Header";
 import Footer from "../Footer";
+import { useNavigate  } from "react-router-dom";
 import {Outlet, Link} from "react-router-dom";
 import { useState, useEffect } from "react";
 import Banner from "../Banner";
 
 function Home() {
+  const navigate = useNavigate();
   const [DataValue, setDataValue] = useState([]);
   const [error, setError] = useState(false);
 
@@ -23,8 +25,8 @@ function Home() {
     fetchHome();
   }, []);
 
-  if (error) {
-    return <span>Oups il y a eu un problème</span>
+  if (error === true) {
+    navigate("/404");
   }
 
 
